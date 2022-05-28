@@ -7,6 +7,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 import org.junit.jupiter.api.Test;
@@ -21,11 +22,17 @@ import org.junit.jupiter.api.Test;
 public class StreamSorter {
 
     int[] sortArray(int[] arr) {
-        return null;
+    	IntStream streams = Arrays.stream(arr);
+    	streams = streams.sorted();
+    	
+        return streams.toArray();
     }
 
     List<String> sortList(List<String> list) {
-        return null;
+    	Stream<String> strng = list.stream();
+    	strng = strng.sorted((aa,zz) -> aa.compareTo(zz));
+    	
+        return strng.collect(Collectors.toList());
     }
     
     // =================== DO NOT MODIFY THE CODE BELOW ======================

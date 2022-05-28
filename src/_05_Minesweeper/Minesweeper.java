@@ -64,7 +64,11 @@ public class Minesweeper extends PApplet {
      * *Note* This can be done using a for loop, but try to do it with Streams.
      */
     void revealAllCells() {
+
     	streamcells.forEach(eachcell -> eachcell.revealed =true);
+
+        streamcells.forEach(eachcell -> eachcell.revealed =true);
+//github.com/League-level5-Student/level5-00-lambdas-and-streams-meijiahe.git
     }
     
     /*
@@ -78,12 +82,17 @@ public class Minesweeper extends PApplet {
      */
     boolean checkWin() {
     	
+
     	Stream<Cell> cellcheck = streamcells.filter(individualcell -> individualcell.mine ==false&&individualcell.revealed==false);
     	
     	if (cellcheck.count()==0) {
     		return true;
     	}
     	
+
+    	
+    	//Stream<String> stringresult = strings.filter(hhh -> hhh.equals(strToCount));
+//github.com/League-level5-Student/level5-00-lambdas-and-streams-meijiahe.git
         return false;
     }
     
